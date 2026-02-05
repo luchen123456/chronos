@@ -1,0 +1,5 @@
+{
+  "name": "岁月时钟 (Chronos)",
+  "description": "一个高精度的年龄计算器，可实时显示精确到小数点后12位的年龄，并提供星座见解。",
+  "requestFramePermissions": []
+}
