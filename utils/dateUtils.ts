@@ -26,7 +26,7 @@ export const getZodiacSign = (day: number, month: number): string => {
 // Approximate year length in milliseconds (taking leap years into account)
 const MS_PER_YEAR = 31557600000; 
 
-export const calculatePreciseAge = (birthDate: Date): { years: number, decimalStr: string, totalSeconds: number, nextBirthdayDays: number } => {
+export const calculatePreciseAge = (birthDate: Date): { years: number, decimalStr: string, totalSeconds: number, nextBirthdayDays: number, totalDays: number } => {
   const now = new Date();
   const diff = now.getTime() - birthDate.getTime();
   
@@ -40,6 +40,9 @@ export const calculatePreciseAge = (birthDate: Date): { years: number, decimalSt
 
   // Total Seconds
   const totalSeconds = Math.floor(diff / 1000);
+
+  // Total Days
+  const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
 
   // Next Birthday
   const currentYear = now.getFullYear();
@@ -56,6 +59,7 @@ export const calculatePreciseAge = (birthDate: Date): { years: number, decimalSt
     years,
     decimalStr,
     totalSeconds,
-    nextBirthdayDays
+    nextBirthdayDays,
+    totalDays
   };
 };

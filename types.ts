@@ -10,7 +10,7 @@ export interface AgeStats {
   zodiac: string;
   nextBirthdayDays: number;
   totalSeconds: number;
-  lifeProgress: number; // Percentage assuming ~82 years expectancy
+  totalDays: number;
 }
 
 export enum ViewState {
